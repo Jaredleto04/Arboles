@@ -1,0 +1,104 @@
+class arbolBinario
+{
+ constructor()
+{
+     this.raiz=null;
+}
+     Agregar(n)
+{
+if(this.raiz==null)
+    {
+     this.raiz=n;
+    }
+else
+    {
+     this.Agregate(n,this.raiz);
+    }
+    }
+    Agregate(nuevo,nodoX)
+    {
+if(nuevo.Id<nodoX.Id)
+    {
+if(nodoX.hijoIzquierdo==null)
+    {
+     nodoX.hijoIzquierdo=nuevo;
+    }
+else
+    {
+     this.Agregate(nuevo,nodoX.hijoIzquierdo);
+    }
+    }
+else
+    {
+if(nodoX.hijoDerecho==null)
+    {
+     nodoX.hijoDerecho=nuevo;
+    }
+else
+    {
+     this.Agregate(nuevo,nodoX.hijoDerecho);
+    }}}
+     InOrder()
+    {
+if(this.raiz==null)
+    {
+     console.log("");
+    }
+else
+    {
+     this.InorderRec(this.raiz);
+    }}
+    InorderRec(nodoX)
+    {
+if(nodoX.hijoIzquierdo!=null)
+    {
+     this.InorderRec(nodoX.hijoIzquierdo);
+    }
+     console.log(nodoX);
+if(nodoX.hijoDerecho!=null)
+    {
+     this.InorderRec(nodoX.hijoDerecho);
+    }}
+    PreOrder()
+    {
+if(this.raiz==null)
+    {
+     console.log("");
+    }
+else
+    {
+     this.PreorderRec(this.raiz);
+    }}
+     PreorderRec(nodoX)
+    {
+     console.log(nodoX);
+if(nodoX.hijoIzquierdo!=null)
+    {
+     this.PreorderRec(nodoX.hijoIzquierdo);
+    }
+if(nodoX.hijoDerecho!=null)
+    {
+     this.PreorderRec(nodoX.hijoDerecho);
+    }}
+     PosOrder()
+    {
+if(this.raiz==null)
+    {
+     console.log("");
+    }
+else
+    {
+     this.PosorderRec(this.raiz);
+    }}
+     PosorderRec(nodoX)
+    {
+if(nodoX.hijoIzquierdo!=null)
+    {
+     this.PosorderRec(nodoX.hijoIzquierdo);
+    }
+if(nodoX.hijoDerecho!=null)
+    {
+     this.PosorderRec(nodoX.hijoDerecho);
+    }
+     console.log(nodoX);
+    }}
